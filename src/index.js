@@ -40,6 +40,7 @@ function App() {
         src="https://rawcdn.githack.com/arghjun/heritage_threads/ca8175d5ed89199317506de8ef45590391d5429f/src/cudi.mp3"
         autoPlay
         loop
+        volume = '0.1'
       />
       <ReactGlobe
       globeOptions={{
