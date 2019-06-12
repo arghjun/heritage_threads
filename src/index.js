@@ -37,7 +37,7 @@ function App() {
   return (
     <div style={{fontFamily: 'arial', color: 'transparent', fontWeight: 'bold', width: '100vw', height: '100vh'}}>
       <ReactAudioPlayer
-        src="./cudi.mp3"
+        src="https://rawcdn.githack.com/arghjun/heritage_threads/ca8175d5ed89199317506de8ef45590391d5429f/src/cudi.mp3"
         autoPlay
         loop
       />
