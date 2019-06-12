@@ -1,12 +1,71 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ReactGlobe from 'react-globe';
+import markers from './markers';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function getTooltipContent(marker) {
+  return `${marker.city}`;
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+function App() {
+  const [event, setEvent] = useState(null);
+  const [details, setDetails] = useState(null);
+  const background1 = 'animation.png'
+  const [background, setBackground] = useState(background1)
+  function onClickMarker(marker, markerObject, event) {
+    setEvent({
+      type: 'CLICK',
+      marker,
+      markerObjectID: markerObject.uuid,
+      pointerEventPosition: {x: event.clientX, y: event.clientY},
+    });
+    setDetails(getTooltipContent(marker));
+  }
+
+  function onDefocus(previousCoordinates, event) {
+    setEvent({
+      type: 'DEFOCUS',
+      previousCoordinates,
+      pointerEventPosition: {x: event.clientX, y: event.clientY},
+    });
+    setDetails(null);
+  }
+
+  return (
+    <div style={{fontFamily: 'arial', color: 'transparent', fontWeight: 'bold', width: '100vw', height: '100vh'}}>
+      <ReactGlobe
+      globeOptions={{
+        backgroundTexture: `/Users/arjun/heritage_threads/${background}`,
+      }}
+        markers={markers}
+        markerOptions={{
+          getTooltipContent,
+        }}
+        onClickMarker={onClickMarker}
+        onDefocus={onDefocus}
+      />
+      {details && (
+        <div
+          style={{
+            background: 'transparent',
+            position: 'absolute',
+            fontSize: 20,
+            top: 320,
+            right: 320,
+            padding: 12,
+          }}
+        >
+          <p>{details}</p>
+          <p>
+            <meta http-equiv="Refresh" content="0; url=https://heritagethreadco.myshopify.com/collections/frontpage/products/india-hoodie?variant=28471519084624"/>
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(<App />, rootElement);
