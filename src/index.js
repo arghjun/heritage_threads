@@ -5,6 +5,9 @@ import ReactGlobe from 'react-globe';
 import markers from './markers';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import soundfile from ‘../cudi.mp3’
+import Sound from ‘react-sound’
+
 function getTooltipContent(marker) {
   return `${marker.city}`;
 }
@@ -37,7 +40,8 @@ function App() {
     <div style={{fontFamily: 'arial', color: 'transparent', fontWeight: 'bold', width: '100vw', height: '100vh'}}>
       <ReactGlobe
       globeOptions={{
-        backgroundTexture: `https://rawcdn.githack.com/arghjun/heritage_threads/787e5c86c2abec3d51d5dd368f74f5ec3d012fb6/bg.jpg`,
+        backgroundTexture: `https://rawcdn.githack.com/arghjun/heritage_threads/911766515adfc7bc741469a2653f83433b7a09c6/back.jpg`,
+        texture: `https://raw.githubusercontent.com/chrisrzhou/react-globe/master/textures/globe_dark.jpg`,
       }}
         markers={markers}
         markerOptions={{
