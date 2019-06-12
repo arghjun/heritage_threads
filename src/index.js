@@ -4,9 +4,7 @@ import './index.css';
 import ReactGlobe from 'react-globe';
 import markers from './markers';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
-import soundfile from ‘../cudi.mp3’
-import Sound from ‘react-sound’
+import ReactAudioPlayer from 'react-audio-player';
 
 function getTooltipContent(marker) {
   return `${marker.city}`;
@@ -38,6 +36,11 @@ function App() {
 
   return (
     <div style={{fontFamily: 'arial', color: 'transparent', fontWeight: 'bold', width: '100vw', height: '100vh'}}>
+      <ReactAudioPlayer
+        src="./cudi.mp3"
+        autoPlay
+        loop
+      />
       <ReactGlobe
       globeOptions={{
         backgroundTexture: `https://rawcdn.githack.com/arghjun/heritage_threads/911766515adfc7bc741469a2653f83433b7a09c6/back.jpg`,
