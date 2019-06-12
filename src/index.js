@@ -37,7 +37,7 @@ function App() {
     <div style={{fontFamily: 'arial', color: 'transparent', fontWeight: 'bold', width: '100vw', height: '100vh'}}>
       <ReactGlobe
       globeOptions={{
-        backgroundTexture: `https://rawcdn.githack.com/arghjun/heritage_threads/a35af8199a8e942809a712473fe3b38169ef9683/bgnd.jpg`,
+        backgroundTexture: `https://rawcdn.githack.com/arghjun/heritage_threads/787e5c86c2abec3d51d5dd368f74f5ec3d012fb6/bg.jpg`,
       }}
         markers={markers}
         markerOptions={{
