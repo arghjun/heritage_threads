@@ -12,7 +12,7 @@ function getTooltipContent(marker) {
 function App() {
   const [event, setEvent] = useState(null);
   const [details, setDetails] = useState(null);
-  const background1 = 'animation.png'
+  const background1 = 'background.png';
   const [background, setBackground] = useState(background1)
   function onClickMarker(marker, markerObject, event) {
     setEvent({
@@ -37,7 +37,7 @@ function App() {
     <div style={{fontFamily: 'arial', color: 'transparent', fontWeight: 'bold', width: '100vw', height: '100vh'}}>
       <ReactGlobe
       globeOptions={{
-        backgroundTexture: `/Users/arjun/heritage_threads/${background}`,
+        backgroundTexture: `https://raw.githubusercontent.com/arghjun/heritage_threads/master/${background}`,
       }}
         markers={markers}
         markerOptions={{
