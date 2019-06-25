@@ -67,7 +67,7 @@ function App() {
         >
           <p>{details}</p>
           <p>
-            <meta http-equiv="Refresh" content="0; url=https://heritagethreadco.myshopify.com/collections/frontpage/products/india-hoodie?variant=28471519084624"/>
+            <meta http-equiv="Refresh" content="0; url=https://heritagethreadsco.bigcartel.com/"/>
           </p>
         </div>
       )}
