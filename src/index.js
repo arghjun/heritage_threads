@@ -67,7 +67,7 @@ function App() {
         >
           <p>{details}</p>
           <p>
-            <meta http-equiv="Refresh" content="0; url=https://heritagethreadsco.bigcartel.com/"/>
+            <meta http-equiv="Refresh" content="0; url=https://shop.heritagethreadsco.com/"/>
           </p>
         </div>
       )}
